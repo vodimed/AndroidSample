@@ -17,7 +17,7 @@ public class MainActivity extends Activity {
     View.OnClickListener onClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            ((android.widget.TextView)view).append(String.format("%i\n", ++i));
+            ((android.widget.TextView)view).append(String.format("%d\n", ++i));
         }
     };
 }
