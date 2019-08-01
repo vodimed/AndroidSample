@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class MainActivity extends Activity {
-    int i = 0;
+    private int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,10 +19,11 @@ public class MainActivity extends Activity {
         control.setMovementMethod(new android.text.method.ScrollingMovementMethod());
     }
 
-    View.OnClickListener onClick = new View.OnClickListener() {
+    private View.OnClickListener onClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            ((android.widget.TextView)view).append(String.format("%d\n", ++i));
+            // https://github.com/dawsonice/KissProxy
+            ((android.widget.TextView)view).append(String.format(Locale.getDefault(), "%d\n", ++i));
         }
     };
 }
